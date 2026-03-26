@@ -124,7 +124,7 @@ def prophet_predict(train, dates, changepoint_prior_scale, seasonality_mode):
     return model, forecast["yhat"].values
 
 
-def tune_prophet(train, val_index):
+def tune_prophet(train, val_series):
     grid = ParameterGrid(
         {
             "changepoint_prior_scale": [0.05, 0.5],
@@ -137,11 +137,11 @@ def tune_prophet(train, val_index):
         try:
             model, pred = prophet_predict(
                 train,
-                val_index,
+                val_series.index,
                 params["changepoint_prior_scale"],
                 params["seasonality_mode"],
             )
-            score = mape(train.loc[val_index].values, pred)
+            score = mape(val_series.values, pred)
             if best is None or score < best["mape"]:
                 best = {"mape": score, "params": params, "model": model}
         except Exception:
@@ -323,7 +323,7 @@ def main(store, product):
         predictions_2019["SARIMA"] = sarima_test.values
 
     # Prophet (tuning)
-    prophet_best = tune_prophet(series_data.train.to_frame("number_sold"), series_data.val.index)
+    prophet_best = tune_prophet(series_data.train.to_frame("number_sold"), series_data.val)
     if prophet_best:
         prophet_model = prophet_best["model"]
         prophet_val = prophet_model.predict(pd.DataFrame({"ds": series_data.val.index}))

@@ -1,0 +1,9 @@
+scope,model,order,seasonal_order,mape,rmse,status,changepoint_prior_scale,seasonality_mode,learning_rate,n_estimators,num_leaves,max_depth,seasonality_prior_scale,min_child_samples,colsample_bytree,min_child_weight,subsample
+light,sarima,"(1, 1, 1)","(1, 1, 1, 7)",3.9883263492951966,37.866459107434345,ok,,,,,,,,,,,
+light,prophet,,,1.0000444363102523,10.650752333625835,ok,0.5,additive,,,,,,,,,
+light,lightgbm,,,1.1427254353560965,12.29409552739134,ok,,,0.05,300.0,31.0,,,,,,
+light,xgboost,,,1.1157052225791395,11.92981984247165,ok,,,0.05,300.0,,4.0,,,,,
+full,sarima,"(0, 1, 1)","(2, 1, 1, 7)",3.946020562993186,37.54785360541675,ok,,,,,,,,,,,
+full,prophet,,,0.9988851107230692,10.63835489774114,ok,0.5,additive,,,,,5.0,,,,
+full,lightgbm,,,1.1110413469197316,11.912855163677408,ok,,,0.05,300.0,63.0,8.0,,50.0,,,
+full,xgboost,,,1.0541209647500551,11.336933156733608,ok,,,0.03,300.0,,3.0,,,0.8,5.0,0.8
