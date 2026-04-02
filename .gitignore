@@ -1,4 +1,4 @@
-﻿.venv/
+.venv/
 __pycache__/
 *.pyc
 
@@ -9,7 +9,7 @@ Thumbs.db
 ~$*.pptx
 ~$*.pdf
 
-# 自动生成的实验产物（上交只需要代码和最少结果时，可以不带）
+# Generated files we don't usually commit
 outputs_light/
 outputs_full/
 outputs_optimize/
