@@ -13,6 +13,8 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 import lightgbm as lgb
 import xgboost as xgb
 
+from preprocess import add_time_features, make_supervised
+
 warnings.filterwarnings("ignore")
 
 
@@ -49,30 +51,6 @@ def load_series(store, product):
     val_part = train.loc["2018-01-01":"2018-12-31"]
 
     return SeriesData(train=train_part, val=val_part)
-
-
-def add_time_features(df):
-    df = df.copy()
-    df["dayofweek"] = df.index.dayofweek
-    df["month"] = df.index.month
-    df["dayofyear"] = df.index.dayofyear
-    df["weekofyear"] = df.index.isocalendar().week.astype(int)
-    df["is_weekend"] = (df.index.dayofweek >= 5).astype(int)
-    return df
-
-
-def make_supervised(series):
-    df = pd.DataFrame({"y": series})
-    df = add_time_features(df)
-
-    for lag in [1, 7, 14, 28, 365]:
-        df[f"lag_{lag}"] = df["y"].shift(lag)
-
-    df["roll_mean_7"] = df["y"].shift(1).rolling(7).mean()
-    df["roll_mean_28"] = df["y"].shift(1).rolling(28).mean()
-
-    df = df.dropna()
-    return df
 
 
 def fit_sarima(train, order, seasonal_order):

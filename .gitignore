@@ -1,3 +1,19 @@
-.venv/
+﻿.venv/
 __pycache__/
 *.pyc
+
+.DS_Store
+Thumbs.db
+
+~$*.docx
+~$*.pptx
+~$*.pdf
+
+# 自动生成的实验产物（上交只需要代码和最少结果时，可以不带）
+outputs_light/
+outputs_full/
+outputs_optimize/
+param_search_outputs_light/
+param_search_outputs_full/
+tuning_compare_plots/
+eda_outputs/

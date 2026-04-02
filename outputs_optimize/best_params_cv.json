@@ -1,0 +1,24 @@
+{
+  "baseline": {
+    "seasonality_mode": "additive",
+    "changepoint_prior_scale": 0.5,
+    "seasonality_prior_scale": 10.0,
+    "holidays_prior_scale": 10.0,
+    "changepoint_range": 0.8,
+    "n_changepoints": 25,
+    "monthly_fourier": 0,
+    "quarterly_fourier": 0,
+    "use_country_holidays": false
+  },
+  "optimized_cv": {
+    "changepoint_prior_scale": 0.03,
+    "changepoint_range": 0.95,
+    "holidays_prior_scale": 5.0,
+    "n_changepoints": 30,
+    "seasonality_mode": "multiplicative",
+    "seasonality_prior_scale": 10.0,
+    "monthly_fourier": 0,
+    "quarterly_fourier": 0,
+    "use_country_holidays": false
+  }
+}

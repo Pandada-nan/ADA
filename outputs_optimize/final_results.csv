@@ -1,0 +1,4 @@
+item,mape,rmse,notes
+baseline_prophet_test,1.135405931445054,12.02422791788523,Original Prophet baseline on 2019 test
+optimized_cv_raw_test,1.0835955292498014,11.56883234520365,Rolling-CV selected Prophet without post-calibration
+optimized_cv_calibrated_test,1.0113358452702739,10.897658066257385,Final best result with linear post-calibration

@@ -1,0 +1,20 @@
+{
+  "candidate": "optimized_cv",
+  "mode": "calibrated",
+  "params": {
+    "changepoint_prior_scale": 0.03,
+    "changepoint_range": 0.95,
+    "holidays_prior_scale": 5.0,
+    "n_changepoints": 30,
+    "seasonality_mode": "multiplicative",
+    "seasonality_prior_scale": 10.0,
+    "monthly_fourier": 0,
+    "quarterly_fourier": 0,
+    "use_country_holidays": false
+  },
+  "val_mape": 0.9625063036090039,
+  "test_mape": 1.0113358452702739,
+  "test_rmse": 10.897658066257385,
+  "slope": 0.9676666949513206,
+  "intercept": 28.48124623412474
+}
