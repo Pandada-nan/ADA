@@ -4,9 +4,11 @@ This is an end-to-end time series forecasting project. We first analyze trend an
 
 ## What you need to provide
 
-Put the data under `time series/`:
+Put the original data under `original data/`:
 - `train.csv`: historical data (the code splits it by time: train <= 2017, validation 2018)
 - `test.csv`: the test year data (by default, this corresponds to 2019)
+
+The folder `processing data/` stores exported preprocessed datasets.
 
 The default experiments use a single series: `store=0` and `product=0` (aligned with our report/PPT).
 

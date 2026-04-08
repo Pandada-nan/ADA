@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-DATA_DIR = Path("time series")
+DATA_DIR = Path("original data")
 OUTPUT_DIR = Path("eda_outputs")
 OUTPUT_DIR.mkdir(exist_ok=True)
 

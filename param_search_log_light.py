@@ -18,7 +18,7 @@ from preprocess import add_time_features, make_supervised
 warnings.filterwarnings("ignore")
 
 
-DATA_DIR = Path("time series")
+DATA_DIR = Path("original data")
 OUTPUT_DIR = Path("param_search_outputs_light")
 OUTPUT_DIR.mkdir(exist_ok=True)
 

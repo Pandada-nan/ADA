@@ -19,7 +19,7 @@ from preprocess import add_time_features, build_recursive_features, make_supervi
 warnings.filterwarnings("ignore")
 
 
-DATA_DIR = Path("time series")
+DATA_DIR = Path("original data")
 OUTPUT_DIR = Path("outputs_full")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
