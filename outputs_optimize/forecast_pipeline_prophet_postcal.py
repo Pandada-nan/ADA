@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = BASE_DIR / "time series"
+DATA_DIR = BASE_DIR / "original data"
 OUTPUT_DIR = Path(__file__).resolve().parent
 
 REGRESSOR_COLS = ["is_month_start", "is_month_end", "is_weekend"]
